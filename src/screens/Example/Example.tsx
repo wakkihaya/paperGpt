@@ -174,15 +174,11 @@ const Example = () => {
         ]}
       >
         <View>
-          <Text style={[Fonts.titleRegular]}>{t('welcome:title')}</Text>
+          <Text style={[Fonts.titleRegular]}></Text>
           <Text
             style={[Fonts.textBold, Fonts.textRegular, Gutters.regularBMargin]}
-          >
-            {t('welcome:subtitle')}
-          </Text>
-          <Text style={[Fonts.textSmall, Fonts.textLight]}>
-            {t('welcome:description')}
-          </Text>
+          ></Text>
+          <Text style={[Fonts.textSmall, Fonts.textLight]}></Text>
         </View>
 
         <View
