@@ -1,6 +1,6 @@
 import { useColorScheme } from 'react-native';
 import { useSelector } from 'react-redux';
-import { DarkTheme, DefaultTheme } from '@react-navigation/native';
+import { DefaultTheme } from '@react-navigation/native';
 import {
   Common,
   Fonts,
@@ -26,10 +26,6 @@ export default function () {
   const currentTheme = useSelector(
     (state: { theme: ThemeState }) => state.theme.theme,
   );
-  const isDark = useSelector(
-    (state: { theme: ThemeState }) => state.theme.darkMode,
-  );
-  const darkMode = isDark === null ? colorScheme === 'dark' : isDark;
 
   let variables = {};
   let partialTheme = {};
@@ -45,14 +41,6 @@ export default function () {
 
     variables = Variables;
     partialTheme = themeConfig || {};
-  }
-
-  if (darkMode) {
-    const { Variables, ...darkThemeConfig } =
-      themes[`${currentTheme}_dark` as keyof typeof themes] || {};
-
-    darkVariables = Variables;
-    partialDarkTheme = darkThemeConfig;
   }
 
   const themeVariables = mergeVariables(variables, darkVariables);
@@ -87,7 +75,6 @@ export default function () {
 
   // Merge and return the current Theme
   return buildTheme(
-    darkMode,
     baseTheme,
     formatTheme(themeVariables, partialTheme || {}),
     formatTheme(themeVariables, partialDarkTheme || {}),
@@ -140,16 +127,14 @@ const mergeVariables = (
  * Provide all the theme exposed with useTheme()
  */
 const buildTheme = <F, G, I, L, C>(
-  darkMode: boolean,
   baseTheme: Theme<F, G, I, L, C>,
   themeConfig: Partial<Theme<F, G, I, L, C>>,
   darkThemeConfig: Partial<Theme<F, G, I, L, C>>,
 ) => {
   return {
     ...mergeTheme(baseTheme, themeConfig, darkThemeConfig),
-    darkMode,
     NavigationTheme: mergeNavigationTheme(
-      darkMode ? DarkTheme : DefaultTheme,
+      DefaultTheme,
       baseTheme.NavigationColors,
     ),
   };
@@ -184,7 +169,7 @@ const mergeTheme = <F, G, I, L, C>(
  */
 const mergeNavigationTheme = (
   reactNavigationTheme: ThemeNavigationTheme,
-  overrideColors: Partial<ThemeNavigationColors>,
+  overrideColors?: Partial<ThemeNavigationColors>,
 ) => ({
   ...reactNavigationTheme,
   colors: {

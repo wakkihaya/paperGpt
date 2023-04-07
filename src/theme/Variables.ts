@@ -18,7 +18,7 @@ export const Colors = {
   textGray800: '#000000',
   textGray400: '#4D4D4D',
   textGray200: '#A1A1A1',
-  primary: '#E14032',
+  primary: '#f4511e',
   success: '#28a745',
   error: '#dc3545',
   //ComponentColors
