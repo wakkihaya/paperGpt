@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 // @refresh reset
 const MainNavigator = () => {
-  const { Colors } = useTheme();
+  const { Colors, Fonts } = useTheme();
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: true }}>
@@ -20,9 +20,7 @@ const MainNavigator = () => {
             backgroundColor: Colors.primary,
           },
           headerTintColor: Colors.white,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+          headerTitleStyle: Fonts.textBold,
         }}
       />
     </Stack.Navigator>
