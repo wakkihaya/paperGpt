@@ -1,0 +1,31 @@
+[debug] [2023-04-08T13:59:16.984Z] ----------------------------------------------------------------------
+[debug] [2023-04-08T13:59:16.985Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-04-08T13:59:16.986Z] CLI Version:   11.25.3
+[debug] [2023-04-08T13:59:16.986Z] Platform:      darwin
+[debug] [2023-04-08T13:59:16.986Z] Node Version:  v16.14.0
+[debug] [2023-04-08T13:59:16.988Z] Time:          Sat Apr 08 2023 15:59:16 GMT+0200 (Central European Summer Time)
+[debug] [2023-04-08T13:59:16.988Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-08T13:59:17.067Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-08T13:59:17.067Z] > authorizing via signed-in user (wakkihaya@gmail.com)
+[debug] [2023-04-08T13:59:17.068Z] [iam] checking project papergpt-3ab33 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-04-08T13:59:17.069Z] > refreshing access token with scopes: []
+[debug] [2023-04-08T13:59:17.071Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-04-08T13:59:17.071Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-08T13:59:17.303Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-04-08T13:59:17.303Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-08T13:59:17.350Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/papergpt-3ab33:testIamPermissions [none]
+[debug] [2023-04-08T13:59:17.350Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/papergpt-3ab33:testIamPermissions x-goog-quota-user=projects/papergpt-3ab33
+[debug] [2023-04-08T13:59:17.350Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/papergpt-3ab33:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-04-08T13:59:18.207Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/papergpt-3ab33:testIamPermissions 200
+[debug] [2023-04-08T13:59:18.207Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/papergpt-3ab33:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-04-08T13:59:18.208Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/papergpt-3ab33/serviceAccounts/papergpt-3ab33@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-04-08T13:59:18.208Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/papergpt-3ab33/serviceAccounts/papergpt-3ab33@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-04-08T13:59:18.984Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/papergpt-3ab33/serviceAccounts/papergpt-3ab33@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-04-08T13:59:18.984Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/papergpt-3ab33/serviceAccounts/papergpt-3ab33@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'papergpt-3ab33'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
