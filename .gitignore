@@ -66,3 +66,5 @@ firebase-debug.log
 
 # Hide credentilas
 /secrets/
+
+.env

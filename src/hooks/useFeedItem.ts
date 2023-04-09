@@ -1,3 +1,4 @@
+import { useFetchFeedQuery } from '../services/modules/feed';
 import type { FeedItemType } from './types';
 
 const DATA: FeedItemType[] = [
@@ -21,7 +22,13 @@ const DATA: FeedItemType[] = [
   },
 ];
 
-export const useFeedItem = () => {
-  //TODO: data should come from the api
-  return { data: DATA };
+interface UseFeedItemConfig {
+  searchWord: string;
+}
+
+export const useFeedItem = ({ searchWord }: UseFeedItemConfig) => {
+  const { data, isLoading } = useFetchFeedQuery(searchWord);
+  console.log(data);
+  //TODO: change the data form
+  return { data, isLoading };
 };
