@@ -17,7 +17,7 @@ import { FeedItem } from '../../components';
 const Feed = () => {
   const { Common, Fonts, Colors, Gutters, Layout, Images } = useTheme();
   const { data } = useFeedItem({
-    searchWord: 'neuroscience',
+    searchWord: 'neuroscence',
   }); //TODO: should come from search input
 
   return (

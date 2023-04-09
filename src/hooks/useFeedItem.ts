@@ -29,6 +29,7 @@ interface UseFeedItemConfig {
 export const useFeedItem = ({ searchWord }: UseFeedItemConfig) => {
   const { data, isLoading } = useFetchFeedQuery(searchWord);
   console.log(data);
+
   //TODO: change the data form
   return { data, isLoading };
 };
